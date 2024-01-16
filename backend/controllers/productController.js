@@ -5,12 +5,12 @@ import Product from '../models/productModel.js';
 // @route GET/api/products
 //@Access public
 
-const getProducts = (async(req, res) => {
+const getProducts = asyncHandler(async(req, res) => {
     const products = await Product.find({});
     res.json(products);
 });
 
-const getProductById = (async(req, res) => {
+const getProductById = asyncHandler(async(req, res) => {
    const product = await Product.findById(req.params.id);
 
    if (product) {
