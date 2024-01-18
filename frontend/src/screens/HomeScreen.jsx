@@ -1,6 +1,8 @@
 import {Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap';
 import Product from '../components/Product';
-import Rating from '../components/Rating';
+//import Rating from '../components/Rating';
+import {useEffect, useState} from 'react';
+import axios from 'axios';
 
 
 const HomeScreen = () => {
@@ -13,6 +15,19 @@ const HomeScreen = () => {
         };
         fetchProducts();
     }, [])
+
+    return (
+        <>
+            <h1>Latest Productions</h1>
+            <Row>
+                {products.map((product) => (
+                    <Col sm={12} md={6} lg={4} xl={3}>
+                        <h3>{product.name}</h3>
+                    </Col>
+                ))}
+            </Row>
+        </>
+    )
 }
 
 export default HomeScreen
