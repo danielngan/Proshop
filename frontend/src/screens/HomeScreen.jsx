@@ -1,8 +1,9 @@
 import {Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap';
 import Product from '../components/Product';
-//import Rating from '../components/Rating';
-import {useEffect, useState} from 'react';
+import Rating from '../components/Rating';
+import {useEffect, useState, useParams} from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const HomeScreen = () => {
