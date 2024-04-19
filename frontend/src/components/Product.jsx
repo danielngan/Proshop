@@ -3,23 +3,28 @@ import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
 const Product = ({ product }) => {
+    console.log(product);
     return (
-        <Card className='my-3 p-3 rounded'>Product
-            <a href = {`/product/${product._id}`}>
+        <Card className='my-3 p-3 rounded'>
+            <Link to = {`/product/${product._id}`}>
                 <Card.Img src={product.image} variant="top" />
-            </a>
+            </Link>
             <Card.Body>
-                <a href={`/product/${product._id}`}>
-                    <Card.Title as="div" className='product-title'>
+                <Link to={`/product/${product._id}`}>
+                    <Card.Title as="div"  className='product-t'>
                         <strong>{product.name}</strong>
                     </Card.Title>
-                </a>
+                </Link>
+
+               <Card.Text as='div'>
+                    <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+               </Card.Text>
 
                 <Card.Text as="h3">
-                    <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+                   ${product.price}
                 </Card.Text>
 
-                <Card.Text as='h3'>${product.price}</Card.Text>
+                {/* <Card.Text as='h3'>${product.price}</Card.Text> */}
             </Card.Body>
         </Card>
     )
