@@ -8,7 +8,7 @@ const CartScreen = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     return (
-        <div>ozzy osbourne</div>
+        <div>thedanbro</div>
     )
 }
 
