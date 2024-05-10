@@ -20,10 +20,7 @@ const ProductScreen = () => {
 
   const [qty, setQty] = useState(1);
 
-  // const addToCartHandler = () => {
-  //     dispatch(addToCart({...product}));
-  // }
-
+  
   // /product/1234
   // /product/:id 
   
