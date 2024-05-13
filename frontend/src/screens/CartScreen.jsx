@@ -44,6 +44,24 @@ const CartScreen = () => {
                                             ))}
                                         </Form.Control>
                                 </Col>
+                                <Col md={2}>
+                                    <Button type='button' variant='light'>
+                                        <FaTrash />
+                                    </Button>
+                                </Col>
+                                <Col md={4}>
+                                    <Card>
+                                        <ListGroup variant = 'flush'>
+                                            <ListGroup.Item>
+                                                <h2>
+                                                    Subtotal ({ cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                                                    items
+                                                </h2>
+                                                ${ cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}
+                                            </ListGroup.Item>
+                                        </ListGroup>
+                                    </Card>
+                                </Col>
                             </Row>
                         </ListGroup.Item>
                     ))}
